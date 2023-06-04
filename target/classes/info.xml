@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	
+
+	<bean id="e1" class="com.ms.Employee">
+		<property name="eno" value="1001"/>
+		<property name="name" value="abcd"/>
+		<property name="address" ref="add1"/>
+		<property name="email">
+			<set>
+					<value>nabi@gmail.com</value>
+					<value>aaa@gmail.com</value>
+			</set>
+		</property>
+		<property name="kid">
+			<map>
+					<entry key="kid1" value="121" />
+					<entry key="kid2" value="122" />
+			</map>
+		</property>
+		<property name="education">
+			<props>
+					<prop key="davv">mca</prop>
+					<prop key="iit">m.tech</prop>
+					<prop key="iet">BBA</prop>
+			</props>
+		</property>
+		<property name="Project">
+			<list>
+					<ref bean="p1"/>
+					<ref bean="p2"/>
+			</list>
+		</property>
+		<property name="addresses">
+			<map>
+				<entry key="permanent-add" value-ref="add1" />
+				<entry key="temporary-add" value-ref="add2" />
+			</map>
+		</property>
+	</bean> 
+	
+		
+	<bean id="add1" class="com.ms.Address">
+		<property name="hno" value="112"/>
+		<property name="road" value="ab-road"/>
+		<property name="city" value="indore"/>
+	</bean>
+	<bean id="add2" class="com.ms.Address">
+		<property name="hno" value="113"/>
+		<property name="road" value="mg-road"/>
+		<property name="city" value="indore"/>
+	</bean> 
+	<bean id="p1" class="com.ms.Project">
+		<property name="pcode" value="1p"/>
+		<property name="pname" value="help desk"/>
+	</bean> 
+	<bean id="p2" class="com.ms.Project">
+		<property name="pcode" value="2m"/>
+		<property name="pname" value="inventory"/>
+	</bean> 
+	
+	
+
+</beans>
+
